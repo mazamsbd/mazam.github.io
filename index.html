@@ -215,16 +215,20 @@
         }
 
         .hero-card .profile-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.3rem;
+            overflow: hidden;
             margin-bottom: 20px;
+            border: 4px solid var(--primary);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-card .profile-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .hero-card h3 {
