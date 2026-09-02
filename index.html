@@ -826,7 +826,372 @@
     }
 
 }
+/* =========================================================
+   STATISTICS OVERVIEW
+   ========================================================= */
 
+.statistics-section {
+    position: relative;
+
+    padding: 30px 0 80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #ffffff 100%
+        );
+}
+
+
+/* Main Statistics Container */
+
+.statistics-container {
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #e6edf7;
+
+    border-radius: 24px;
+
+    padding: 30px 25px 28px;
+
+    box-shadow:
+        0 15px 45px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.statistics-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+
+.statistics-title h2 {
+    margin: 0;
+
+    color: var(--dark);
+
+    font-size: 1.65rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.title-line {
+    position: relative;
+
+    width: 70px;
+
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary)
+    );
+}
+
+
+.title-line::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    right: 0;
+}
+
+
+.title-line:last-child {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   STATISTICS GRID
+   ========================================================= */
+
+.statistics-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   STATISTICS CARD
+   ========================================================= */
+
+.statistics-card {
+
+    min-height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 22px 18px;
+
+    background: white;
+
+    border: 1px solid #e7edf5;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.statistics-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   ICONS
+   ========================================================= */
+
+.statistics-icon {
+
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 1.35rem;
+}
+
+
+/* Blue */
+
+.statistics-icon.blue {
+
+    background: #e6efff;
+
+    color: #2563eb;
+}
+
+
+/* Green */
+
+.statistics-icon.green {
+
+    background: #e2f8f0;
+
+    color: #059669;
+}
+
+
+/* Purple */
+
+.statistics-icon.purple {
+
+    background: #eee8ff;
+
+    color: #7c3aed;
+}
+
+
+/* Orange */
+
+.statistics-icon.orange {
+
+    background: #fff0e8;
+
+    color: #ea580c;
+}
+
+
+/* Gold */
+
+.statistics-icon.gold {
+
+    background: #fff4df;
+
+    color: #f59e0b;
+}
+
+
+/* =========================================================
+   STATISTICS TEXT
+   ========================================================= */
+
+.statistics-content {
+
+    min-width: 0;
+}
+
+
+.statistics-content h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 2rem;
+
+    line-height: 1;
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+.statistics-content strong {
+
+    display: block;
+
+    color: var(--dark);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 5px;
+}
+
+
+.statistics-content p {
+
+    margin: 0;
+
+    color: var(--light-text);
+
+    font-size: 0.78rem;
+
+    line-height: 1.4;
+}
+
+
+/* Citation badge */
+
+.statistics-badge {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    background: #e4f8f0;
+
+    color: #059669;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .statistics-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .statistics-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .statistics-section {
+
+        padding: 20px 0 60px;
+    }
+
+
+    .statistics-container {
+
+        padding: 25px 15px;
+    }
+
+
+    .statistics-title h2 {
+
+        font-size: 1.35rem;
+    }
+
+
+    .title-line {
+
+        width: 35px;
+    }
+
+
+    .statistics-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .statistics-card {
+
+        min-height: 120px;
+    }
+
+}
         /* ================= SECTIONS ================= */
 
         section {
@@ -1453,36 +1818,140 @@
 </section>
 
 
-<!-- ================= STATS ================= -->
+<!-- ================= STATISTICS OVERVIEW ================= -->
+<section class="statistics-section">
 
-<section class="stats">
+    <div class="container">
 
-    <div class="container stats-grid">
+        <div class="statistics-container">
 
-        <div class="stat">
-            <h3>14+</h3>
-            <p>Peer-Reviewed Journal Articles</p>
-        </div>
+            <!-- Section Title -->
+            <div class="statistics-title">
 
-        <div class="stat">
-            <h3>6</h3>
-            <p>Patents</p>
-        </div>
+                <span class="title-line"></span>
 
-        <div class="stat">
-            <h3>16+</h3>
-            <p>Conference Presentations</p>
-        </div>
+                <h2>Statistics Overview</h2>
 
-        <div class="stat">
-            <h3>10+</h3>
-            <p>Years of Research Experience</p>
+                <span class="title-line"></span>
+
+            </div>
+
+
+            <!-- Statistics Cards -->
+            <div class="statistics-grid">
+
+
+                <!-- Publications -->
+                <div class="statistics-card">
+
+                    <div class="statistics-icon blue">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <h3>14+</h3>
+
+                        <strong>Publications</strong>
+
+                        <p>Peer-Reviewed Journals</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Citations -->
+                <div class="statistics-card">
+
+                    <div class="statistics-icon green">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <h3 id="citation-count">500+</h3>
+
+                        <strong>Citations</strong>
+
+                        <p>Google Scholar</p>
+
+                        <span class="statistics-badge">
+                            h-index: <span id="h-index">--</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Research Impact -->
+                <div class="statistics-card">
+
+                    <div class="statistics-icon purple">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <h3>16+</h3>
+
+                        <strong>Presentations</strong>
+
+                        <p>Conferences & Seminars</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Patents -->
+                <div class="statistics-card">
+
+                    <div class="statistics-icon orange">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <h3>6</h3>
+
+                        <strong>Patents</strong>
+
+                        <p>Filed & Granted</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Awards -->
+                <div class="statistics-card">
+
+                    <div class="statistics-icon gold">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+
+                    <div class="statistics-content">
+
+                        <h3>2+</h3>
+
+                        <strong>Awards</strong>
+
+                        <p>Achievements & Recognition</p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
-
 
 <!-- ================= ABOUT ================= -->
 
