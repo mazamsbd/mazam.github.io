@@ -115,132 +115,717 @@
             cursor: pointer;
         }
 
-        /* ================= HERO ================= */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 90px;
-            background:
-                linear-gradient(135deg, #eef6ff 0%, #ffffff 55%, #ecfdf5 100%);
-        }
+.hero {
+    min-height: calc(100vh - 70px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 60px;
-            align-items: center;
-        }
+    padding: 100px 0 80px;
 
-        .hero-label {
-            display: inline-block;
-            color: var(--primary);
-            background: #e8f1ff;
-            padding: 7px 14px;
-            border-radius: 30px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(37, 99, 235, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f3f8ff 0%,
+            #ffffff 55%,
+            #effcf7 100%
+        );
+}
 
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(2.8rem, 6vw, 5rem);
-            line-height: 1.08;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
 
-        .hero h1 span {
-            color: var(--primary);
-        }
+/* Hero Grid */
 
-        .hero h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
+.hero-grid {
+    position: relative;
+    z-index: 2;
 
-        .hero p {
-            max-width: 720px;
-            font-size: 1.05rem;
-            color: var(--light-text);
-            margin-bottom: 30px;
-        }
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
 
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+    gap: 60px;
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+    align-items: center;
+}
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
 
-        .btn-outline {
-            border: 1px solid var(--border);
-            background: white;
-        }
+.hero-content {
+    max-width: 720px;
+}
 
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
 
-        .hero-card {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-        }
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-        .hero-card .profile-icon {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border: 4px solid var(--primary);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+    padding: 9px 17px;
 
-        .hero-card .profile-icon img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%
-            object-fit: cover;
-            display: block;
-        }
+    border-radius: 30px;
 
-        .hero-card h3 {
-            color: var(--dark);
-            margin-bottom: 8px;
-        }
+    background: #e7f0ff;
+    color: var(--primary);
 
-        .hero-card p {
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-label i {
+    font-size: 0.9rem;
+}
+
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3.4rem, 6vw, 5.5rem);
+
+    line-height: 1.02;
+
+    color: var(--dark);
+
+    margin-bottom: 20px;
+
+    letter-spacing: -1.5px;
+}
+
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+
+.hero h2 {
+    font-size: 1.35rem;
+
+    font-weight: 650;
+
+    color: var(--secondary);
+
+    margin-bottom: 22px;
+
+    line-height: 1.5;
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    font-size: 1.08rem;
+
+    line-height: 1.85;
+
+    color: var(--light-text);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   ACADEMIC HIGHLIGHTS
+   ========================================================= */
+
+.hero-highlights {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0;
+
+    margin: 30px 0 32px;
+}
+
+
+.hero-highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-right: 22px;
+
+    margin-right: 22px;
+
+    border-right: 1px solid var(--border);
+}
+
+
+.hero-highlight:last-child {
+    border-right: none;
+
+    margin-right: 0;
+
+    padding-right: 0;
+}
+
+
+.highlight-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e6efff;
+
+    color: var(--primary);
+
+    font-size: 1.1rem;
+}
+
+
+.highlight-icon.green {
+    background: #e4f8f0;
+    color: #059669;
+}
+
+
+.highlight-icon.purple {
+    background: #eee9ff;
+    color: #7c3aed;
+}
+
+
+.hero-highlight strong {
+    display: block;
+
+    color: var(--dark);
+
+    font-size: 0.88rem;
+
+    margin-bottom: 5px;
+}
+
+
+.hero-highlight span {
+    display: block;
+
+    color: var(--light-text);
+
+    font-size: 0.78rem;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 21px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.btn-primary {
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.28);
+}
+
+
+.btn-outline {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--dark);
+}
+
+
+.btn-outline:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.hero-social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.hero-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+    transition: all 0.3s ease;
+}
+
+
+.hero-social a:hover {
+    background: var(--primary);
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   RIGHT SIDE — PROFILE PHOTO
+   ========================================================= */
+
+.hero-photo-wrapper {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 500px;
+}
+
+
+.hero-photo-bg {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.08),
+            rgba(37, 99, 235, 0.02) 55%,
+            transparent 70%
+        );
+}
+
+
+/* Main circular image */
+
+.hero-photo {
+    position: relative;
+
+    z-index: 3;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 0 0 5px var(--primary),
+        0 25px 60px rgba(15, 23, 42, 0.18);
+}
+
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+
+.hero-photo:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PHOTO DECORATIONS
+   ========================================================= */
+
+.photo-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+.photo-decoration-1 {
+    width: 85px;
+    height: 85px;
+
+    right: 5%;
+    top: 8%;
+
+    border: 12px solid rgba(37, 99, 235, 0.08);
+}
+
+
+.photo-decoration-2 {
+    width: 130px;
+    height: 130px;
+
+    left: 2%;
+    bottom: 5%;
+
+    border: 18px solid rgba(16, 185, 129, 0.07);
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+   ========================================================= */
+
+.hero-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.hero-decoration-1 {
+    width: 400px;
+    height: 400px;
+
+    right: -250px;
+    top: 40px;
+
+    background: rgba(37, 99, 235, 0.035);
+}
+
+
+.hero-decoration-2 {
+    width: 300px;
+    height: 300px;
+
+    left: -220px;
+    bottom: -180px;
+
+    background: rgba(16, 185, 129, 0.045);
+}
+
+
+/* =========================================================
+   RESPONSIVE HERO
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr 0.85fr;
+
+        gap: 35px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(3rem, 5.5vw, 4.5rem);
+    }
+
+
+    .hero-photo {
+        width: 380px;
+        height: 380px;
+    }
+
+
+    .hero-photo-bg {
+        width: 420px;
+        height: 420px;
+    }
+
+
+    .hero-highlights {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+
+    .hero-highlight {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+
+        margin-right: 0;
+
+        padding-right: 0;
+
+        padding-bottom: 12px;
+    }
+
+
+    .hero-highlight:last-child {
+        border-bottom: none;
+
+        padding-bottom: 0;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: auto;
+
+        padding: 80px 0 70px;
+    }
+
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .hero-content {
+        max-width: 760px;
+
+        margin: 0 auto;
+    }
+
+
+    .hero-label {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-highlights {
+        text-align: left;
+
+        max-width: 600px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    .hero-social {
+        justify-content: center;
+    }
+
+
+    .hero-photo-wrapper {
+        min-height: 420px;
+
+        order: -1;
+    }
+
+
+    .hero-photo {
+        width: 360px;
+        height: 360px;
+    }
+
+
+    .hero-photo-bg {
+        width: 400px;
+        height: 400px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 65px 0 60px;
+    }
+
+
+    .hero-photo-wrapper {
+        min-height: 330px;
+    }
+
+
+    .hero-photo {
+        width: 285px;
+        height: 285px;
+
+        border-width: 5px;
+
+        box-shadow:
+            0 0 0 4px var(--primary),
+            0 18px 40px rgba(15, 23, 42, 0.16);
+    }
+
+
+    .hero-photo-bg {
+        width: 320px;
+        height: 320px;
+    }
+
+
+    .hero h1 {
+        font-size: 2.9rem;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero h2 {
+        font-size: 1.08rem;
+    }
+
+
+    .hero-description {
+        font-size: 0.98rem;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-highlights {
+        gap: 10px;
+    }
+
+
+    .hero-highlight {
+        padding-bottom: 10px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    .photo-decoration-1 {
+        width: 55px;
+        height: 55px;
+
+        right: 3%;
+    }
+
+
+    .photo-decoration-2 {
+        width: 80px;
+        height: 80px;
+    }
+
+}
 
         /* ================= SECTIONS ================= */
 
@@ -725,15 +1310,19 @@
 
 
 <!-- ================= HERO ================= -->
-
 <section class="hero" id="home">
+
+    <div class="hero-decoration hero-decoration-1"></div>
+    <div class="hero-decoration hero-decoration-2"></div>
 
     <div class="container hero-grid">
 
-        <div>
+        <!-- LEFT: PERSONAL INFORMATION -->
+        <div class="hero-content">
 
             <span class="hero-label">
-                RESEARCHER • HYDROGEN ENERGY • POLYMER SCIENCE
+                <i class="fas fa-user-graduate"></i>
+                POSTDOCTORAL RESEARCHER
             </span>
 
             <h1>
@@ -742,70 +1331,120 @@
             </h1>
 
             <h2>
-                Postdoctoral Fellow · Korea Institute of Energy Technology
+                Polymer Electrolytes & Hydrogen Energy Researcher
             </h2>
 
-            <p>
+            <p class="hero-description">
                 Researcher specializing in polymer electrolyte membranes,
                 hydrogen energy, fuel cells, water electrolysis, carbon dioxide
-                separation, and advanced polymeric materials.
+                separation, and advanced polymeric materials. Passionate about
+                developing sustainable energy technologies for a cleaner future.
             </p>
 
+            <!-- Academic highlights -->
+            <div class="hero-highlights">
+
+                <div class="hero-highlight">
+                    <div class="highlight-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <strong>Ph.D. in Chemistry</strong>
+                        <span>Incheon National University</span>
+                    </div>
+                </div>
+
+
+                <div class="hero-highlight">
+                    <div class="highlight-icon green">
+                        <i class="fas fa-university"></i>
+                    </div>
+
+                    <div>
+                        <strong>Postdoctoral Fellow</strong>
+                        <span>KENTECH · Institute of Hydrogen Energy</span>
+                    </div>
+                </div>
+
+
+                <div class="hero-highlight">
+                    <div class="highlight-icon purple">
+                        <i class="fas fa-flask"></i>
+                    </div>
+
+                    <div>
+                        <strong>Research Focus</strong>
+                        <span>PEMs · Hydrogen · Fuel Cells · Electrolysis</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
             <div class="hero-buttons">
 
                 <a href="#research" class="btn btn-primary">
                     <i class="fas fa-flask"></i>
-                    Explore Research
+                    My Research
                 </a>
 
-                <a href="#publications" class="btn btn-outline">
-                    <i class="fas fa-book"></i>
-                    Publications
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i>
+                    Contact Me
                 </a>
+
+                <a href="assets/cv/CV.pdf"
+                   target="_blank"
+                   class="btn btn-outline">
+                    <i class="fas fa-file-pdf"></i>
+                    Download CV
+                </a>
+
+            </div>
+
+
+            <!-- Social Links -->
+            <div class="hero-social">
 
                 <a href="https://linkedin.com/in/mazams"
                    target="_blank"
-                   class="btn btn-outline">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
+                   aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
 
-                  <a href="assets/cv/CV.pdf" target="_blank" class="btn btn-primary">
-                <i class="fas fa-file-pdf"></i>
-                    CV
+                <a href="https://orcid.org/0000-0002-0301-6812"
+                   target="_blank"
+                   aria-label="ORCID">
+                    <i class="fab fa-orcid"></i>
                 </a>
+
+                <a href="https://scholar.google.com/citations?user=6ayEY-gAAAAJ"
+                   target="_blank"
+                   aria-label="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+
             </div>
 
         </div>
 
 
-        <div class="hero-card">
+        <!-- RIGHT: LARGE PROFILE PHOTO -->
+        <div class="hero-photo-wrapper">
 
-        <img src="assets/profile.jpg" alt="Md Abu Zafar Al Munsur"
-             class="profile-photo">
+            <div class="hero-photo-bg"></div>
+
+            <div class="hero-photo">
+
+                <img src="assets/profile.jpg"
+                     alt="Md Abu Zafar Al Munsur">
+
             </div>
 
-            <h3>Academic Profile</h3>
-
-            <p>
-                <strong>Current Position:</strong><br>
-                Postdoctoral Fellow
-            </p>
-
-            <p>
-                <strong>Institute:</strong><br>
-                Institute of Hydrogen Energy, KENTECH
-            </p>
-
-            <p>
-                <strong>Ph.D.:</strong><br>
-                Chemistry · Incheon National University
-            </p>
-
-            <p>
-                <strong>Research Focus:</strong><br>
-                Polymer Electrolytes & Hydrogen Energy
-            </p>
+            <div class="photo-decoration photo-decoration-1"></div>
+            <div class="photo-decoration photo-decoration-2"></div>
 
         </div>
 
