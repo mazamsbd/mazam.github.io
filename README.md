@@ -1,1 +1,1 @@
-This is the source code to Jon Barron's public academic website: https://jonbarron.info/. Thanks to Jon Barron.
+This is the source code generated with the help of AI. You are welcome to copy and use it.
